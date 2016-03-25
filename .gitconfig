@@ -1,0 +1,5 @@
+[user]
+	name = WorldFS
+	email = fsworld009@gmail.com
+[core]
+	editor = vim -u ~/.vimrc_git
