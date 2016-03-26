@@ -2,4 +2,4 @@
 	name = WorldFS
 	email = fsworld009@gmail.com
 [core]
-	editor = vim -u ~/.vimrc_git
+	editor = vim -u ~/dotfiles/.vimrc_git

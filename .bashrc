@@ -1,6 +1,6 @@
 export CLICOLOR=1
-source ~/git-completion.bash
-source ~/git-prompt.sh
+source ~/dotfiles/git-completion.bash
+source ~/dotfiles/git-prompt.sh
 
 #http://stackoverflow.com/a/9002012/3973896
 fn_exists() {
