@@ -18,3 +18,5 @@ One way to solve this issue is by using git submodules, but I don't want to conf
 defaults write -g InitialKeyRepeat -int 25
 defaults write -g KeyRepeat -int 2
 ```
+
+cats type script is from [https://github.com/jb55/typescript-ctags](https://github.com/jb55/typescript-ctags)
