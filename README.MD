@@ -19,4 +19,4 @@ defaults write -g InitialKeyRepeat -int 25
 defaults write -g KeyRepeat -int 2
 ```
 
-cats type script is from [https://github.com/jb55/typescript-ctags](https://github.com/jb55/typescript-ctags)
+ctags typescript definition is from [https://github.com/jb55/typescript-ctags](https://github.com/jb55/typescript-ctags)
