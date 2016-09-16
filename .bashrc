@@ -19,3 +19,6 @@ if fn_exists __git_ps1 && command_exists git; then
 else
     export PS1="\[\e[0;32m\]\w\[\e[0m\]\n\[\e[0;36m\]$\[\e[0m\] "
 fi
+
+#clang
+PATH=/usr/local/opt/llvm/bin:$PATH
