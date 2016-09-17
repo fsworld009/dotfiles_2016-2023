@@ -21,4 +21,4 @@ else
 fi
 
 #clang
-PATH=/usr/local/opt/llvm/bin:$PATH
+#PATH=/usr/local/opt/llvm/bin:$PATH
