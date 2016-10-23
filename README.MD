@@ -28,4 +28,5 @@ echo `which fish` | sudo tee -a /etc/shells
 chsh -s `which fish`
 ```
 
+.tmux.conf is modified from [https://github.com/gpakosz/.tmux](https://github.com/gpakosz/.tmux)
 ctags typescript definition is from [https://github.com/jb55/typescript-ctags](https://github.com/jb55/typescript-ctags)
