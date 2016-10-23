@@ -7,6 +7,9 @@ Configuration files for my Macbook
 2. git clone this project under dotfiles folder
 3. run install.sh script
 
+# "Open iTerm" Service in Finder
+[https://github.com/peterldowns/iterm2-finder-tools](https://github.com/peterldowns/iterm2-finder-tools)
+
 # set fish shell as default shell (under bash)
 echo `which fish` | sudo tee -a /etc/shells
 chsh -s `which fish`
