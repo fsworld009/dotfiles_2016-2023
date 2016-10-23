@@ -4,7 +4,11 @@ function fish_prompt
     set_color green 
     echo -n (prompt_pwd)
     set_color purple
-    echo -n ' ('"$git_branch"')'
+    if [ "$git_branch" = "" ]
+       echo -n ' '
+    else
+     echo -n ' ('"$git_branch"')'
+    end
     set_color cyan
     echo -n \n'$ '
 end
