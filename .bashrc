@@ -19,7 +19,7 @@ command_exists () {
 st () {
     #if [ $TERM_PROGRAM = "iTerm.app" ]; then
     #fi
-    # https://www.huyng.com/posts/productivity-boost-with-tmux-iterm2-workspaces
+    # modified from https://www.huyng.com/posts/productivity-boost-with-tmux-iterm2-workspaces
     # cached: # https://webcache.googleusercontent.com/search?q=cache:8MMQNUpgiCsJ:https://www.huyng.com/posts/productivity-boost-with-tmux-iterm2-workspaces+&cd=7&hl=en&ct=clnk&gl=us
     # abort if we're already inside a TMUX session
     [ "$TMUX" == "" ] || exit 0 
@@ -32,7 +32,7 @@ st () {
     else
         # present menu for user to choose which workspace to open
         PS3="Please choose your session: "
-        options=($(tmux list-sessions -F "#S") "NEW" "BASH" "FISH" "QUIT")
+        options=($(tmux list-sessions -F "#S") "NEW")
         echo "Available sessions"
         echo "------------------"
         echo " "
@@ -42,24 +42,23 @@ st () {
           break
         done
     fi
+    #echo "action=$action"
     
     case $action in
         "NEW")
             read -p "Enter new session name: " SESSION_NAME
             tmux new -s "$SESSION_NAME"
-            break
             ;;
-        "BASH")
-            bash --login
-            break;;
-        "FISH")
-            fish
-            break;;
-        "QUIT")
-            break;;    
+        # "BASH")
+        #     bash --login
+        #     ;;
+        # "FISH")
+        #     fish
+        #     ;;
+        # "QUIT")
+        #     ;;
         *) 
-            tmux attach-session -t $opt 
-            break
+            tmux attach-session -t $action
             ;; 
     esac
 }
