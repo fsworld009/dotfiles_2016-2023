@@ -19,6 +19,13 @@ defaults write -g InitialKeyRepeat -int 25
 defaults write -g KeyRepeat -int 2
 ```
 
+## add `/usr/local/bin` (brew packages location) to PATH in El captain
+Copy environment.plist to `~/Library/LaunchAgents/`
+```sh
+launchctl load ~/Library/LaunchAgents/environment.plist
+```
+[Source](http://stackoverflow.com/questions/25385934/setting-environment-variables-via-launchd-conf-no-longer-works-in-os-x-yosemite)
+
 ## "Open iTerm" Service in Finder
 [https://github.com/peterldowns/iterm2-finder-tools](https://github.com/peterldowns/iterm2-finder-tools)
 
