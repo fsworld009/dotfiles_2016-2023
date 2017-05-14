@@ -19,7 +19,7 @@ defaults write -g InitialKeyRepeat -int 25
 defaults write -g KeyRepeat -int 2
 ```
 
-## add `/usr/local/bin` (brew packages location) to PATH in El captain
+## add `/usr/local/bin` (brew packages location) to PATH in El Capitan
 Copy environment.plist to `~/Library/LaunchAgents/`
 ```sh
 launchctl load ~/Library/LaunchAgents/environment.plist
