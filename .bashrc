@@ -65,7 +65,7 @@ st () {
 
 #export PS1="\[\e[0;32m\]\w\[\e[0m\]\n\[\e[0;36m\]$\[\e[0m\] "
 if fn_exists __git_ps1 && command_exists git; then
-    export PS1='\[\e[0;32m\]\w\[\e[0m\] \[\e[0;35m\]$(__git_ps1)\e[0m\]'$'\n\[\e[0;36m\]$\[\e[0m\]  '
+    export PS1='\[\e[0;32m\]\w\[\e[0m\] \[\e[0;35m\]$(__git_ps1)\[\e[0m\]'$'\n\[\e[0;36m\]$\[\e[0m\]  '
 else
     export PS1="\[\e[0;32m\]\w\[\e[0m\]\n\[\e[0;36m\]$\[\e[0m\] "
 fi
