@@ -16,7 +16,7 @@ command_exists () {
     type "$1" &> /dev/null ;
 }
 
-st () {
+starttmux () {
     #if [ $TERM_PROGRAM = "iTerm.app" ]; then
     #fi
     # modified from https://www.huyng.com/posts/productivity-boost-with-tmux-iterm2-workspaces
