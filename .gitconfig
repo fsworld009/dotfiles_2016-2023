@@ -3,4 +3,4 @@
 	email = fsworld009@gmail.com
 [core]
 	editor = vim -u ~/dotfiles/.vimrc_git
-	excludesfile = /Users/fsworld009/dotfiles/.gitignore_global
+	excludesfile = ~/dotfiles/.gitignore_global
