@@ -5,5 +5,7 @@ ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.editorconfig ~/.editorconfig
 ln -s ~/dotfiles/.ctags ~/.ctags
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/fish/ ~/.config/fish
+mkdir ~/.config
+mkdir ~/.config/fish
+ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
 exit

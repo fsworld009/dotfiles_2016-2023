@@ -35,6 +35,11 @@ echo `which fish` | sudo tee -a /etc/shells
 chsh -s `which fish`
 ```
 
+## Windows (msys2)
+- Install msys2 via chocolatey
+- Run `_msys2/install.bat`
+- (Optional) register context menu via `_msys2/context_menu.reg`
+
 .tmux.conf is modified from [https://github.com/gpakosz/.tmux](https://github.com/gpakosz/.tmux)
 
 ctags typescript definition is from [https://github.com/jb55/typescript-ctags](https://github.com/jb55/typescript-ctags)

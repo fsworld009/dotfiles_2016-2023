@@ -1,0 +1,22 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\mingw32]
+@="MinGW &32 Bash Here"
+"Icon"="\"C:\\tools\\msys64\\mingw32.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\mingw32\command]
+@="cmd /C \"startmingw32.cmd\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\mingw64]
+@="MinGW &64 Bash Here"
+"Icon"="\"C:\\tools\\msys64\\mingw64.exe\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\mingw64\command]
+@="cmd /C \"startmingw64.cmd\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\msys2]
+@="MSYS2 Bash Here"
+"Icon"="\"C:\\tools\\msys64\\msys2.ico\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\msys2\command]
+@="cmd /C \"startmsys2.cmd\""
