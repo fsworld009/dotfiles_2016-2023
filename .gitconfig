@@ -4,3 +4,4 @@
 [core]
 	editor = vim -u ~/dotfiles/.vimrc_git
 	excludesfile = ~/dotfiles/.gitignore_global
+	autocrlf = input
