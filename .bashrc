@@ -25,7 +25,7 @@ starttmux () {
     [ "$TMUX" == "" ] || exit 0 
 
     # startup a "default" session if none currently exists
-    tmux has-session -t _default || tmux new-session -s _default -d
+    # tmux has-session -t _default || tmux new-session -s _default -d
 
     if [ "$1" != "" ]; then
         action="$1"
