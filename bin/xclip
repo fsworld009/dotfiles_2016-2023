@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# https://github.com/Alexpux/MSYS2-packages/issues/581
+# https://gist.github.com/coderofsalvation/7ff980326e9f75261eee8f8e0896ac3b
+if [[ "$(uname)" =~ Darwin ]]; then 
+  cat - | pbcopy 
+else if  [[ "$(uname)" =~ Linux ]]; then 
+  cat - | xclip
+else 
+  # msys2
+  cat - > /dev/clipboard
+fi

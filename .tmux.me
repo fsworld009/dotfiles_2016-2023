@@ -3,3 +3,6 @@ run "tmux set -g default-shell $(which fish)"
 setw -g mode-keys vi
 run -b 'tmux bind -T copy-mode-vi PageUp send -X page-up 2> /dev/null || true'
 run -b 'tmux bind -T copy-mode-vi PageDown send -X page-down 2> /dev/null || true'
+
+# http://blog.joncairns.com/2013/06/copying-between-tmux-buffers-and-the-system-clipboard/
+bind y run-shell "tmux show-buffer | ~/dotfiles/bin/xclip " \; display-message "Copied tmux buffer to system clipboard"
