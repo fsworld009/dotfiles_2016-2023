@@ -1,0 +1,5 @@
+# my configurations and overrides
+run "tmux set -g default-shell $(which fish)"
+setw -g mode-keys vi
+run -b 'tmux bind -T copy-mode-vi PageUp send -X page-up 2> /dev/null || true'
+run -b 'tmux bind -T copy-mode-vi PageDown send -X page-down 2> /dev/null || true'
