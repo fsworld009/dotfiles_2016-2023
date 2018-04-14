@@ -1,8 +1,10 @@
 # my configurations and overrides
 run "tmux set -g default-shell $(which fish)"
 setw -g mode-keys vi
-run -b 'tmux bind -T copy-mode-vi PageUp send -X page-up 2> /dev/null || true'
-run -b 'tmux bind -T copy-mode-vi PageDown send -X page-down 2> /dev/null || true'
+bind -T copy-mode-vi PageDown          send-keys -X page-down
+bind -T copy-mode-vi PageUp            send-keys -X page-up
 
-# http://blog.joncairns.com/2013/06/copying-between-tmux-buffers-and-the-system-clipboard/
-bind y run-shell "tmux show-buffer | ~/dotfiles/bin/xclip " \; display-message "Copied tmux buffer to system clipboard"
+# modified from http://blog.joncairns.com/2013/06/copying-between-tmux-buffers-and-the-system-clipboard/
+bind y choose-buffer "run-shell \"tmux show-buffer -b %% | ~/dotfiles/bin/xclip ; tmux display-message \\\"Copied tmux buffer to system clipboard\\\" \""
+
+bind > choose-buffer "run-shell \"BUFF_INDEX=%%; tmux show-buffer -b \\\$BUFF_INDEX > ~/dotfiles/_tmux/\\\$BUFF_INDEX.txt ; tmux display-message \\\"Copied tmux buffer to text file\\\" \""
