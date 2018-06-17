@@ -40,6 +40,12 @@ launchctl load ~/Library/LaunchAgents/environment.plist
 - to use `gitk`, you need to run mingw32 or mingw64 bash, and install `mingw-w64-i686-tk`, `mingw-w64-x86_64-tk`
 - run `git config --system --add core.autocrlf true` so that pulled files have windows CRLF line ending format (asuming you also do the same to `git for Windows`)
 
+# WSL (Windows Subsystem for Linux)
+Run this command for the shell that you are going to spawn X11 apps
+```
+. ~/dotfiles/x11forward_setup.sh
+```
+
 # Optional
 ## Set fish shell as default shell (under bash)
 ```sh
