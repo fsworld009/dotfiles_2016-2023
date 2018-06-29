@@ -1,3 +1,4 @@
+.DS_Store
 fish/
 !fish/config.fish
-_tmux/*.txt
+_tmux/
