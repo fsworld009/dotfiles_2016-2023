@@ -1,0 +1,14 @@
+# .tmux.conf.local overrides for WSL
+# currently WSL shell cannot render bold text properly
+# causing the color misaligned with tmux_config
+# workaround: disable all bold under WSL 
+# https://github.com/Microsoft/console/issues/136
+
+tmux_conf_theme_mode_attr='none'
+tmux_conf_theme_message_attr='none'
+tmux_conf_theme_mode_attr='none'
+tmux_conf_theme_window_status_current_attr='none'
+tmux_conf_theme_window_status_bell_attr='blink,none'
+tmux_conf_theme_status_left_attr='none,none,none'
+tmux_conf_theme_status_right_attr='none,none,none'
+tmux_conf_theme_root_attr='none,blink'
