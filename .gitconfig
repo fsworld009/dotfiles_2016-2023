@@ -4,3 +4,8 @@
 [core]
 	editor = vim -u ~/dotfiles/.vimrc_git
 	excludesfile = ~/dotfiles/.gitignore_global
+[alias]
+	adog = log --all --decorate --oneline --graph
+  # https://stackoverflow.com/a/45991969/3973896
+  # git hist (--all|branch1 branch2|--branches|--topo-order)*
+  hist = log --graph --date-order --date=short --pretty=format:'%C(auto)%h%d %C(reset)%s %C(bold blue)%ce %C(reset)%C(green)%cr (%cd)'
