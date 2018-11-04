@@ -4,6 +4,7 @@
 # not be able to run tmux if we do so.
 
 WIN10_PULSEAUDIO_BIN_PATH=/mnt/f/wsl/pulse6/bin/
+killall pulseaudio.exe
 
 cd $WIN10_PULSEAUDIO_BIN_PATH
 ./pulseaudio.exe &
