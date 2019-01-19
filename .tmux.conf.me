@@ -15,4 +15,4 @@ bind C-t choose-buffer "run-shell \"BUFF_INDEX=%%; tmux show-buffer -b \\\$BUFF_
 
 tmux_conf_theme_status_right='#{prefix}#{pairing} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} '
 
-if 'grep -q Microsoft /proc/version' 'source ~/dotfiles/wsl/.tmux.conf.me'
+# if 'grep -q Microsoft /proc/version' 'source ~/dotfiles/wsl/.tmux.conf.me'
