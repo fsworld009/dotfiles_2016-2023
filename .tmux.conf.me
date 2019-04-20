@@ -15,4 +15,8 @@ bind C-t choose-buffer "run-shell \"BUFF_INDEX=%%; tmux show-buffer -b \\\$BUFF_
 
 tmux_conf_theme_status_right='#{prefix}#{pairing} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %R , %d %b | #{username}#{root} '
 
+# Swap window shortcuts
+bind-key S-Left swap-window -t -1
+bind-key S-Right swap-window -t +1
+
 # if 'grep -q Microsoft /proc/version' 'source ~/dotfiles/wsl/.tmux.conf.me'
