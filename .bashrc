@@ -70,6 +70,6 @@ else
     export PS1="\[\e[0;32m\]\w\[\e[0m\]\n\[\e[0;36m\]$\[\e[0m\] "
 fi
 
-if command_exists brew; then
-  source $(brew --prefix nvm)/nvm.sh
-fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
