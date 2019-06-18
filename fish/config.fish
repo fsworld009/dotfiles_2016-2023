@@ -1,9 +1,8 @@
 if begin type -q pip; and test (pip list | grep virtualfish ^ /dev/null); end
   eval (python -m virtualfish compat_aliases)
 end
-  
 
-#http://stackoverflow.com/questions/24581793/ps1-prompt-in-fish-friendly-interactive-shell-show-git-branch
+# http://stackoverflow.com/questions/24581793/ps1-prompt-in-fish-friendly-interactive-shell-show-git-branch
 function fish_prompt
     set -l git_branch (git branch ^/dev/null | sed -n '/\* /s///p')
     set_color green 

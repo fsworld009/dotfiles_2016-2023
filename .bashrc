@@ -73,3 +73,27 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+if [ -d "$HOME/.rbenv/" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  if command_exists rbenv; then
+    eval "$(rbenv init -)"
+  fi
+fi
+
+if [ -d "$HOME/.pyenv/" ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  if command_exists pyenv; then
+    eval "$(pyenv init -)"
+  fi
+fi
+
+# Disable python 2 deprecation warning from pip
+export PYTHONWARNINGS=ignore:DEPRECATION pip
+
+# Seems required in Mac environment?
+# https://coderwall.com/p/-k_93g/mac-os-x-valueerror-unknown-locale-utf-8-in-python
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
