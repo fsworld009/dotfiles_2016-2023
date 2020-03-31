@@ -1,5 +1,5 @@
 DOTFILES="$HOME/dotfiles"
-LINK_FILES=(".bash_profile" ".bashrc" ".gitconfig" ".editorconfig" ".ctags" ".tmux.conf.local")
+LINK_FILES=(".gitconfig" ".editorconfig" ".ctags" ".tmux.conf.local")
 
 pushd $HOME > /dev/null
 for i in ${LINK_FILES[*]}; do

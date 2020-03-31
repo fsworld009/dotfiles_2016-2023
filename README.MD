@@ -6,6 +6,7 @@ Configuration files for my Macbook
 1. Go to home folder (~), create folder "dotfiles"
 2. git clone this project under dotfiles folder
 3. run install.sh script
+4. add `source ~/dotfiles/.bashrc` to the last line of `~/.bashrc`
 
 # Why not just put everything under home folder and git the home folder?
 In order to not including all other files and folders under home, I have to add * in .gitignore, then manually whitelist each config files. Then, when there is any other git repository under home folder, they will be affected by .gitignore file under home folder, because those repositories are considered as another git repo under a git repo (home folder).
@@ -45,6 +46,11 @@ Run this command for the shell that you are going to spawn X11 apps
 ```
 . ~/dotfiles/x11forward_setup.sh
 ```
+
+# Mac OSX / macOS
+
+Copy .bash_profile to `~/.bash_profile` after running install.sh
+https://medium.com/@kingnand.90/what-is-the-difference-between-bash-profile-and-bashrc-d4c902ac7308
 
 # Optional
 ## Set fish shell as default shell (under bash)

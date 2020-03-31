@@ -1,4 +1,4 @@
-if begin type -q pip; and test (pip list | grep virtualfish ^ /dev/null); end
+if begin type -q pip; and test (pip list --format=legacy | grep virtualfish ^ /dev/null); end
   eval (python -m virtualfish compat_aliases)
 end
 
