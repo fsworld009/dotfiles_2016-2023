@@ -1,26 +1,39 @@
 DOTFILES="$HOME/dotfiles"
 LINK_FILES=(".gitconfig" ".editorconfig" ".ctags" ".tmux.conf.local")
+# shouldn't link .npmrc because auth token is stored in this file
+# shouldn't delete .bashrc and .bash_profile at ~ to avoid erasing system default ones
+COPY_FILES=(".bashrc" ".bash_profile" ".npmrc")
 
 pushd $HOME > /dev/null
 for i in ${LINK_FILES[*]}; do
-	rm -f $i
-  ln -s "$DOTFILES/$i" $i
-  echo "$(pwd)/$i Created."
+  if [ ! -L $i ]; then
+    echo -e "\e[1m\e[33mSkip $i because it already exists and it's not a symbolic link."
+  else
+	  rm -f $i
+    ln -s "$DOTFILES/$i" $i
+    echo "$(pwd)/$i Created."
+  fi
 done
 
 # .tmux.conf
-rm -f .tmux.conf
-ln -s "$DOTFILES/.tmux/.tmux.conf" .tmux.conf
-echo "$(pwd)/.tmux.conf Created."
-
-# don't link .npmrc, instead do a copy to avoid saving auth token into this repo
-if [ -f ".npmrc" ]; then
-  echo -e '\e[1m\e[33mSkip .npmrc because it already exists.'
-  echo -e 'Please update it manually to prevent from losing auth token.\e[0m'
+if [ ! -L .tmux.conf ]; then
+  echo -e "\e[1m\e[33mSkip $i because it already exists and it's not a symbolic link."
 else
-  cp $DOTFILES/.npmrc .npmrc
-  echo "$(pwd)/.npmrc Created."
+  rm -f .tmux.conf
+  ln -s "$DOTFILES/.tmux/.tmux.conf" .tmux.conf
+  echo "$(pwd)/.tmux.conf Created."
 fi
+
+
+# Don't copy files if they already exist
+for i in ${COPY_FILES[*]}; do
+  if [ -f $i ]; then
+    echo -e "\e[1m\e[33mSkip $i because it already exists."
+  else
+    cp "$DOTFILES/$i" $i
+    echo "$(pwd)/$i Created."
+  fi
+done
 
 # fish
 mkdir -p .config

@@ -5,27 +5,15 @@ Configuration files for my Macbook
 # INSTALL
 1. Go to home folder (~), create folder "dotfiles"
 2. git clone this project under dotfiles folder
-3. run install.sh script
-4. add `source ~/dotfiles/.bashrc` to the last line of `~/.bashrc`
+3. git submodule update
+4. run install.sh script
+5. add `source ~/dotfiles/.bashrc` to the last line of `~/.bashrc` if there's default one presented
 
 # Why not just put everything under home folder and git the home folder?
 In order to not including all other files and folders under home, I have to add * in .gitignore, then manually whitelist each config files. Then, when there is any other git repository under home folder, they will be affected by .gitignore file under home folder, because those repositories are considered as another git repo under a git repo (home folder).
 
 One way to solve this issue is by using git submodules, but I don't want to configure submodules everytime I clone a git repo, so I decided to move all the files I need to git under home folder to dotfiles folder, and create symlinks under home folder.
 
-# MacOSX
-## Key repeat speed
-```sh
-defaults write -g InitialKeyRepeat -int 25
-defaults write -g KeyRepeat -int 2
-```
-
-## add `/usr/local/bin` (brew packages location) to PATH in El Capitan
-Copy environment.plist to `~/Library/LaunchAgents/`
-```sh
-launchctl load ~/Library/LaunchAgents/environment.plist
-```
-[Source](http://stackoverflow.com/questions/25385934/setting-environment-variables-via-launchd-conf-no-longer-works-in-os-x-yosemite)
 
 ## "Open iTerm" Service in Finder
 [https://github.com/peterldowns/iterm2-finder-tools](https://github.com/peterldowns/iterm2-finder-tools)
@@ -49,8 +37,27 @@ Run this command for the shell that you are going to spawn X11 apps
 
 # Mac OSX / macOS
 
-Copy .bash_profile to `~/.bash_profile` after running install.sh
-https://medium.com/@kingnand.90/what-is-the-difference-between-bash-profile-and-bashrc-d4c902ac7308
+## Key repeat speed
+```sh
+defaults write -g InitialKeyRepeat -int 25
+defaults write -g KeyRepeat -int 2
+```
+
+## add `/usr/local/bin` (brew packages location) to PATH in El Capitan
+Copy environment.plist to `~/Library/LaunchAgents/`
+```sh
+launchctl load ~/Library/LaunchAgents/environment.plist
+```
+[Source](http://stackoverflow.com/questions/25385934/setting-environment-variables-via-launchd-conf-no-longer-works-in-os-x-yosemite)
+
+# Update `.tmux` submodule commit
+
+```bash
+cd .tmux
+git pull origin master
+cd ..
+git add .tmux
+```
 
 # Optional
 ## Set fish shell as default shell (under bash)
