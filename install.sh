@@ -1,3 +1,5 @@
+#!/bin/bash
+
 DOTFILES="$HOME/dotfiles"
 LINK_FILES=(".gitconfig" ".editorconfig" ".ctags" ".tmux.conf.local")
 # shouldn't link .npmrc because auth token is stored in this file
@@ -6,7 +8,7 @@ COPY_FILES=(".bashrc" ".bash_profile" ".npmrc")
 
 pushd $HOME > /dev/null
 for i in ${LINK_FILES[*]}; do
-  if [ ! -L $i ]; then
+  if [ -f $i ] && [ ! -L $i ]; then
     echo -e "\e[1m\e[33mSkip $i because it already exists and it's not a symbolic link."
   else
 	  rm -f $i
@@ -16,7 +18,7 @@ for i in ${LINK_FILES[*]}; do
 done
 
 # .tmux.conf
-if [ ! -L .tmux.conf ]; then
+if [ -f .tmux.conf ] && [ ! -L .tmux.conf ]; then
   echo -e "\e[1m\e[33mSkip $i because it already exists and it's not a symbolic link."
 else
   rm -f .tmux.conf
